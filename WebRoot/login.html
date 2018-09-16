@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+
+        }
+        body{
+            background:url("img/bg.jpg");
+            overflow-x: hidden;
+        }
+        .top{
+            position: absolute;
+            top: 20px;
+            display: block;
+            margin: 0;
+            width: 100%;
+            height: 40px;
+            background: rgba(255, 248, 249, 0.82);
+            font-size: 15px;
+            line-height: 40px;
+        }
+        .menu a {
+            color: #212121;
+            text-decoration: none;
+            width: 100px;
+        }
+        .menu a:hover {
+            color: #8b8276;
+            text-decoration: none;
+        }
+        .menu{
+            width: 99%;
+            height: 40px;
+            position: absolute;
+            left: 80px;
+            list-style: none;
+
+        }
+        .menu li{
+            width: 16%;
+            height: 40px;
+            float: left;
+
+        }
+        .tab{
+            margin: 40px auto;
+            height: 40px;
+        }
+        .tab div{
+            display: none;
+        }
+        .tab #tb1{
+            height: 40px;
+            background: rgb(250, 214, 204);
+        }
+        .form-inline {
+            position: absolute;
+            left: 40%;
+            margin-top: 0px;
+            line-height: 40px;
+            float: left;
+        }
+        .searchText {
+            margin-top: -1px;
+            padding: 4px 6px;
+        }
+        #searchBut {
+            width: 50px;
+            height: 30px;
+            border: hidden;
+            background-color: #ffd3c5;
+            font-size: 15px;
+            cursor: pointer;
+            border-radius: 4px;
+            margin-left: 10px;
+            color: #232323;
+        }
+
+        #searchBut:hover {
+            background-color: rgba(255, 211, 197, 0.68);
+        }
+        .content{
+            width:700px;
+            margin-bottom:40px;
+            background: rgb(255, 255, 255);
+            position: absolute;
+            top: 130px;
+            left: 300px;
+            overflow: hidden;
+            box-shadow: 0px 2px 5px black ;
+            border-radius: 4px;
+            
+        }
+        .title{
+            width: 700px;
+            height: 70px;
+            margin-top: 30px;
+            border-bottom: 1px solid;
+
+        }
+        .menu1{
+            width: 300px;
+            margin: 0 auto;
+            list-style: none;
+        }
+        .menu1 li{
+            margin-left:50px;
+            float: left;
+            font-size: 30px;
+        }
+        .menu1 li a{
+            color: #353434;
+            text-decoration: none;
+        }
+        .main{
+            width: 700px;
+            height: 100px;
+        }
+        .tabs{
+            padding-top: 50px;
+            width: 500px;
+            margin:0 auto;
+            font-size: 20px;
+            text-align: center;
+            float: left;
+            
+            
+        }
+
+        .tabs p{
+            margin-top: 10px;
+        }
+        #tb2{
+            width: 500px;
+            height: 280px;
+           
+        }
+        #tb3{
+            width: 500px;
+            height: 350px;
+            display: none;
+        }
+        .pn{
+            width: 270px;
+            height: 35px;
+            display: inline-block;
+            border: 1px solid  #E6E6E6;
+        }
+        .btn{
+            width: 150px;
+            height: 40px;
+            margin-top: 20px;
+            margin-left: 4px;
+            background:#ffd3c5 ;
+            border-radius: 5px;
+            outline: none;
+            border: none;
+            box-shadow:0px 0px 1px rgba(2, 2, 2, 0.56);
+        }
+        .btn a{
+            text-decoration: none;
+            color: #000000;
+        }
+        .I{
+            margin-top: 40px;
+            margin-left: 20px;
+
+            float:left;
+        }
+    </style>
+    <script src="js/jquery-1.8.0.js"></script>
+    <script>
+        $(function(){
+              $(".d1 a").click(function(){
+                var str=$(this).attr("rel");/*获取当前标签的属性值*/
+                $("#"+str).show(300);/*拼接用双引号*//*slideDown下滑 fadeIn淡入*/
+                $("#"+str).siblings().hide(100);/*slideUp收起 fadeOut淡出*/
+
+            })
+            $(".menu1 li a").click(function(){
+                var str=$(this).attr("rel");/*获取当前标签的属性值*/
+                $("#"+str).show();/*拼接用双引号*//*slideDown下滑 fadeIn淡入*/
+                $("#"+str).siblings().hide();/*slideUp收起 fadeOut淡出*/
+                
+            })
+           
+        })
+    </script>
+
+</head>
+<body>
+<div class="all">
+    <div class="top">
+        <ul class="menu">
+            <li><a href="index.jsp"><img src="img/icon.png" class="icon" width="60px" height="40px"></a></li>
+            <li class="d1"><a href="#" rel="tb1"><img src="img/search.png"  class="search" width="50px" height="45px"></a></li>
+            <li class="d1"><a href="#" rel="tb2">商品分类</a></li>
+            <li><a href="login.html">登录/注册</a></li>
+            <li><a href="#">客户服务</a></li>
+            <li><a href="#">联系我们</a></li>
+        </ul>
+        <div class="tab">
+            <div id="tb1">
+                <form class="form-inline">
+                    <label>
+                        <input class="searchText">
+                    </label>
+                    <button id="searchBut">搜索</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="content">
+               <div class="title">
+                <ul class="menu1">
+                    <li><a href="#" rel="tb2">登录</a></li>
+                    <li><a href="#" rel="tb3">注册</a></li>
+                </ul>
+            </div>
+                <div class="main">
+
+                <div class="I"><img src="img/icon.png" width="180px" height="120px"></div>
+                <div class="tabs">
+                    <div id="tb2">
+                        <form action="loginJsp.jsp" method="post">
+                            <p><label class="txt" >账号：</label> <input type="text" class="pn" name="uname"></p>
+                            <p><label class="txt">密码：</label> <input type="password" class="pn" name="psw"></p>
+                            <input type="submit" class="btn" value="登录"><button class="btn"><a href="index.jsp">返回</a></button>
+                        </form>
+                    </div>
+                    <div id="tb3">
+                        <form action="registerJsp.jsp" method="post">
+                            <p><label class="txt">账号：</label> <input type="text" class="pn" name="Cname"></p>
+                            <p><label class="txt">邮箱：</label> <input type="text" class="pn" name="Cemail"></p>
+                            <p><label class="txt">密码：</label> <input type="password" class="pn" name="Cpassword"></p>
+                            <p><input type="radio" name="Csex" value="男" checked>男 <input type="radio" name="Csex" value="女">女</p>
+                            <p><label class="txt">手机：</label> <input type="text" class="pn" name="Cnum"></p>
+                            <button class="btn">注册</button> <button class="btn"><a href="index.jsp">返回</a></button>
+
+                        </form>
+                    </div>
+                </div>
+        </div>
+        </div>
+</div>
+</body>
+</html>
